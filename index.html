@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Società Latina - Miscela Funzionale</title>
+    <style>
+        :root {
+            --primary-color: #0d233a; /* El azul oscuro del empaque */
+            --accent-color: #d4a373;  /* Tono dorado/maca */
+            --bg-color: #fcf8f2;      /* Fondo crema suave estilo kraft */
+            --text-color: #2b2b2b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 450px; /* Optimizado para pantallas de celular */
+            width: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .features {
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: #fdfbf7;
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .recipe-box {
+            background: #f4ebe1;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .recipe-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .btn-action {
+            display: block;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 15px rgba(13, 35, 58, 0.2);
+        }
+
+        .btn-action:hover {
+            background-color: #163657;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #888;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="hero">
+            <h1>SOCIETÀ LATINA</h1>
+            <p>Miscela di Maca Gialla e Cacao</p>
+        </header>
+
+        <div class="content">
+            
+            <section class="features">
+                <h2 class="section-title">Benefici Funzionali</h2>
+                
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <div>
+                        <strong>Energia Naturale:</strong> Rivitalizza il tuo corpo senza i picchi di caffeina.
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">🧠</span>
+                    <div>
+                        <strong>Focus e Concentrazione:</strong> Ideale per lo studio e il lavoro quotidiano.
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">🛡️</span>
+                    <div>
+                        <strong>Fonte di Nutrienti:</strong> Ricco di antiossidanti e minerali essenziali delle Ande.
+                    </div>
+                </div>
+            </section>
+
+            <section class="recipe-box">
+                <h3>Preparazione Suggerita 🥄</h3>
+                <p>Sciogliere 10g (circa un cucchiaio) di miscela in una tazza di latte caldo o vegetale. Dolcificare a piacere e gustare al mattino per iniziare la giornata con la massima carica.</p>
+            </section>
+
+            <a href="#scopri-di-piu" class="btn-action">Scopri la Nostra Storia</a>
+
+        </div>
+
+        <footer>
+            <p>© 2026 Società Latina | Minimarket Premium</p>
+        </footer>
+    </div>
+
+</body>
+</html>
