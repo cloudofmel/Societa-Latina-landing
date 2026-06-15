@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Società Latina | Miscela di Maca e Cacao</title>
+    
+    <!-- Tipografías Premium de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Carga de Tailwind CSS para el diseño estilo Nescafé -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#152b45', /* Azul del empaque */
+                        gold: '#c69c6d', /* Dorado/Maca */
+                        cream: '#f4f0ea', /* Fondo suave */
+                        dark: '#2c2c2c'
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animaciones fluidas al hacer scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-cream font-sans text-dark overflow-x-hidden selection:bg-gold selection:text-white">
+
+    <!-- Barra de Navegación -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300 py-3">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center">
+            <!-- mix-blend-multiply elimina el fondo amarillo de tu logo mágicamente -->
+            <img src="image_f2a395.png" alt="Società Latina Logo" class="h-16 mix-blend-multiply object-contain">
+        </div>
+    </nav>
+
+    <!-- Sección Hero (Pantalla Principal) -->
+    <section class="relative pt-32 pb-40 lg:pt-40 lg:pb-48 bg-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center">
+            
+            <!-- Textos Hero -->
+            <div class="lg:w-1/2 text-center lg:text-left fade-in">
+                <span class="text-gold font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">L'Energia delle Ande</span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif text-navy leading-tight mb-6">
+                    Miscela di<br><span class="italic text-gold">Maca e Cacao</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-10 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
+                    Un integratore funzionale premium. L'incontro perfetto tra la saggezza millenaria andina e il ritmo della tua vita moderna.
+                </p>
+                <a href="#rituale" class="inline-block bg-navy text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-gold hover:text-white transition-colors duration-300 hover:shadow-2xl">
+                    Scopri il Rituale
+                </a>
+            </div>
+
+            <!-- Imagen del Producto Flotante -->
+            <div class="lg:w-1/2 mt-16 lg:mt-0 relative fade-in delay-200 flex justify-center group">
+                <!-- Círculo decorativo de fondo -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-gold/10 rounded-full blur-3xl z-0 transition-transform duration-700 group-hover:scale-110"></div>
+                
+                <!-- mix-blend-multiply hace que el fondo de la foto de estudio desaparezca -->
+                <img src="watermarked_img_16159185687554164780.png" alt="Maca e Cacao" class="w-full max-w-[320px] md:max-w-md object-contain mix-blend-multiply relative z-10 drop-shadow-2xl transition-transform duration-700 hover:-translate-y-4">
+            </div>
+        </div>
+        
+        <!-- Curva SVG inferior hacia la sección oscura -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+            <svg class="relative block w-full h-16 md:h-32" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.81,42.84,188.75,81.16,321.39,56.44Z" fill="#152b45"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Sección de Storytelling (Origen) -->
+    <section class="bg-navy text-white pt-16 pb-32 relative px-6">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <span class="text-gold text-4xl mb-4 block">✧</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-10">Un Viaggio Millenario</h2>
+            <p class="text-lg md:text-xl font-light leading-relaxed text-gray-300 mb-8">
+                A oltre 4.000 metri di altitudine, dove l'aria è rarefatta e la terra incontaminata, nasce la nostra Maca Gialla. Ispirata alla saggezza e alla tradizione Andina, questa radice custodisce la forza primordiale della natura.
+            </p>
+            <p class="text-lg md:text-xl font-light leading-relaxed text-gray-300">
+                Unita al Cacao sudamericano, venerato fin dall'antichità come <span class="text-gold italic">"il cibo degli dèi"</span>, abbiamo creato molto più di una semplice bevanda: è un ponte tra le antiche culture e il tuo benessere quotidiano.
+            </p>
+        </div>
+    </section>
+
+    <!-- Curva SVG hacia la sección de Beneficios -->
+    <div class="bg-navy relative z-10">
+        <svg class="block w-full h-12 md:h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#ffffff"></path>
+        </svg>
+    </div>
+
+    <!-- Sección de Beneficios (Grid moderno) -->
+    <section class="bg-white py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">Coltivato con Rispetto</h2>
+                <div class="w-24 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-500 text-lg">Supporti un'agricoltura sostenibile che rispetta la biodiversità del suolo peruviano e garantisce un commercio equo.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Tarjeta 1 -->
+                <div class="bg-cream rounded-[2rem] p-10 text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in delay-100 border border-transparent hover:border-gold/30">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                        <span class="text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-2xl font-serif text-navy mb-4">Energia Naturale</h3>
+                    <p class="text-gray-600 font-light">Nutri il tuo corpo con una fonte di energia stabile e duratura, perfetta per affrontare la giornata senza cali improvvisi.</p>
+                </div>
+                
+                <!-- Tarjeta 2 -->
+                <div class="bg-cream rounded-[2rem] p-10 text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in delay-200 border border-transparent hover:border-gold/30">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                        <span class="text-3xl">🧠</span>
+                    </div>
+                    <h3 class="text-2xl font-serif text-navy mb-4">Focus Profondo</h3>
+                    <p class="text-gray-600 font-light">La sinergia tra cacao e maca favorisce la chiarezza mentale e la concentrazione, ideale per lo studio e il lavoro.</p>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-cream rounded-[2rem] p-10 text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in delay-300 border border-transparent hover:border-gold/30">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                        <span class="text-3xl">🛡️</span>
+                    </div>
+                    <h3 class="text-2xl font-serif text-navy mb-4">Puro Nutrimento</h3>
+                    <p class="text-gray-600 font-light">Una ricca fonte di antiossidanti, vitamine e minerali. 100% naturale, senza zuccheri aggiunti o conservanti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Preparación (Timeline vertical elegante) -->
+    <section id="rituale" class="bg-cream py-24 px-6 relative border-t border-gold/20">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-4">Il Tuo Rituale</h2>
+                <p class="text-gray-500 text-lg">Concediti un momento. Bastano tre semplici passi.</p>
+            </div>
+            
+            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-gold before:via-gold/50 before:to-transparent">
+                
+                <!-- Paso 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-in delay-100">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-cream bg-gold text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10">1</div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-serif text-2xl text-navy mb-2">Riscalda</h4>
+                        <p class="text-gray-600 font-light">Prepara una tazza del tuo latte preferito (vaccino o vegetale, come avena o mandorla).</p>
+                    </div>
+                </div>
+                
+                <!-- Paso 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-in delay-200">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-cream bg-gold text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10">2</div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-serif text-2xl text-navy mb-2">Aggiungi</h4>
+                        <p class="text-gray-600 font-light">Versa 10g (circa due cucchiaini) della nostra miscela di Maca Gialla e Cacao.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group fade-in delay-300">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-cream bg-gold text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10">3</div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="font-serif text-2xl text-navy mb-2">Mescola</h4>
+                        <p class="text-gray-600 font-light">Mescola con cura, dolcifica a piacere e lasciati avvolgere dall'aroma intenso delle Ande.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-center py-12 px-6 border-t border-white/10">
+        <p class="font-serif text-2xl mb-2 text-gold">Società Latina</p>
+        <p class="text-gray-400 font-light tracking-widest text-sm uppercase mb-6">Premium Minimarket</p>
+        <p class="text-xs text-gray-500 opacity-60">© 2026 Società Latina. Tutti i diritti riservati. Prodotto con orgoglio in Perù, pensato per l'Italia.</p>
+    </footer>
+
+    <!-- Script para animaciones al hacer scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Opcional: Descomenta la siguiente línea si quieres que la animación se repita al subir y bajar
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
