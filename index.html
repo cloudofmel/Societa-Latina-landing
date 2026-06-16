@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Società Latina | Miscela di Maca e Cacao</title>
+    
+    <!-- Tipografías Premium de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS para diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#152b45',
+                        gold: '#c69c6d',
+                        cream: '#fcf8f2',
+                        dark: '#1a1a1a'
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animaciones fluidas al hacer scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-200 { transition-delay: 200ms; }
+        
+        /* Eliminar fondo amarillo del logo si es que la imagen aún lo tuviera */
+        .blend-multiply { mix-blend-mode: multiply; }
+        
+        /* Imagen de fondo para la sección del Ritual */
+        .bg-ritual {
+            background-image: linear-gradient(to right, rgba(21, 43, 69, 0.95), rgba(21, 43, 69, 0.7)), url('ritual.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax elegante */
+        }
+    </style>
+</head>
+<body class="bg-cream font-sans text-dark overflow-x-hidden selection:bg-gold selection:text-white">
+
+    <!-- Navegación Flotante -->
+    <nav class="absolute w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center">
+            <!-- logo.png -->
+            <img src="logo.png" alt="Società Latina Logo" class="h-28 md:h-32 object-contain">
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION (Hombre + Producto) -->
+    <section class="relative pt-24 pb-16 lg:pt-32 lg:pb-24 bg-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center">
+            
+            <!-- Texto Hero -->
+            <div class="lg:w-1/2 text-center lg:text-left fade-in">
+                <h1 class="text-5xl md:text-6xl font-serif text-navy leading-tight mb-4">
+                    La vera energia<br><span class="italic text-gold">delle Ande</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
+                    Un integratore funzionale premium. L'incontro perfetto tra la saggezza millenaria andina e il ritmo della tua vita moderna.
+                </p>
+                <a href="#storia" class="inline-block bg-navy text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-gold hover:text-white transition-colors duration-300">
+                    Scopri di Più
+                </a>
+            </div>
+
+            <!-- Imagen del Hombre -->
+            <div class="lg:w-1/2 mt-12 lg:mt-0 relative fade-in delay-200 flex justify-center">
+                <!-- hombre.png -->
+                <img src="hombre.png" alt="Uomo con Maca" class="w-full max-w-md lg:max-w-lg object-contain relative z-10 drop-shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Curva Separadora -->
+    <div class="w-full overflow-hidden leading-none z-20 bg-cream">
+        <svg class="relative block w-full h-12 md:h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#152b45"></path>
+        </svg>
+    </div>
+
+    <!-- 2. STORYTELLING & MUJER -->
+    <section id="storia" class="bg-navy pt-16 pb-24 relative px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Imagen de la Mujer bebiendo -->
+            <div class="lg:w-1/2 flex justify-center fade-in">
+                <!-- mujer.png -->
+                <img src="mujer.png" alt="Donna che beve" class="w-full max-w-sm lg:max-w-md object-contain rounded-2xl shadow-2xl">
+            </div>
+
+            <!-- Texto Storytelling -->
+            <div class="lg:w-1/2 fade-in delay-200">
+                <span class="text-gold text-sm tracking-widest uppercase mb-2 block font-bold">Un Viaggio Millenario</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Risveglio Quotidiano</h2>
+                <p class="text-lg font-light leading-relaxed text-gray-300 mb-6">
+                    A oltre 4.000 metri di altitudine, dove la terra è incontaminata, nasce la nostra Maca Gialla. Ispirata alla saggezza Andina, questa radice custodisce la forza primordiale della natura.
+                </p>
+                <p class="text-lg font-light leading-relaxed text-gray-300">
+                    Unita al Cacao sudamericano, venerato come <span class="text-gold italic">"il cibo degli dèi"</span>, abbiamo creato molto più di una bevanda: è un momento di connessione con te stesso per iniziare la giornata con chiarezza e vitalità.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. BENEFICIOS & SMOOTHIE (Fondo Blanco) -->
+    <section class="bg-white py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16">
+            
+            <!-- Imagen del Batido -->
+            <div class="lg:w-1/2 fade-in">
+                <!-- smoothie.png -->
+                <img src="smoothie.png" alt="Smoothie di Maca e Cacao" class="w-full h-auto rounded-3xl shadow-2xl object-cover aspect-square md:aspect-[4/3] lg:aspect-square">
+            </div>
+
+            <!-- Lista de Beneficios -->
+            <div class="lg:w-1/2 fade-in delay-200">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-10">Puro Nutrimento</h2>
+                
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center shrink-0 mt-1 shadow-sm border border-gold/20">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-serif text-navy mb-2">Energia Naturale</h3>
+                            <p class="text-gray-600 font-light">Rivitalizza il tuo corpo con una fonte di energia stabile, perfetta per affrontare la giornata senza i cali improvvisi della caffeina.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center shrink-0 mt-1 shadow-sm border border-gold/20">
+                            <span class="text-2xl">🧠</span>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-serif text-navy mb-2">Focus Profondo</h3>
+                            <p class="text-gray-600 font-light">La sinergia tra cacao e maca favorisce la chiarezza mentale e la concentrazione, ideale per lo studio e il lavoro.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-cream flex items-center justify-center shrink-0 mt-1 shadow-sm border border-gold/20">
+                            <span class="text-2xl">🌱</span>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-serif text-navy mb-2">100% Sostenibile</h3>
+                            <p class="text-gray-600 font-light">Supportiamo un'agricoltura che rispetta la biodiversità del suolo peruviano e garantisce un commercio equo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NUOVA SEZIONE: INGREDIENTI -->
+    <section class="bg-cream py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 fade-in">
+                <span class="text-gold text-sm tracking-widest uppercase mb-2 block font-bold">I Nostri Superfood</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">Cosa c'è dentro?</h2>
+                <p class="text-lg font-light text-gray-600 max-w-2xl mx-auto">Solo due ingredienti ancestrali, potenti e puri. Nessun additivo, nessuno zucchero aggiunto. Solo la forza della natura.</p>
+            </div>
+
+            <div class="space-y-24">
+                <!-- Maca -->
+                <div class="flex flex-col md:flex-row items-center gap-12 fade-in">
+                    <div class="md:w-1/2">
+                        <img src="maca.png" alt="Radice di Maca Gialla" class="w-full rounded-3xl shadow-2xl object-cover aspect-[4/3] md:aspect-square">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-3xl font-serif text-navy mb-4">Maca Gialla Peruviana</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Coltivata a oltre 4.000 metri nelle Ande incontaminate, la Maca è una radice adattogena venerata fin dai tempi degli Inca. Supporta la naturale capacità del corpo di resistere allo stress fisico e mentale.
+                        </p>
+                        <div class="bg-white p-6 rounded-2xl border border-gold/20 shadow-sm">
+                            <h4 class="font-bold text-navy mb-3">Valore Nutrizionale & Benefici</h4>
+                            <ul class="space-y-2 text-sm text-gray-600 font-light">
+                                <li><strong class="text-gold">Vitamine e Minerali:</strong> Ricca di Vitamina C, Rame, Ferro e Potassio.</li>
+                                <li><strong class="text-gold">Resistenza:</strong> Aumenta la stamina e combatte l'affaticamento.</li>
+                                <li><strong class="text-gold">Equilibrio:</strong> Favorisce la naturale regolazione ormonale.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cacao -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 fade-in">
+                    <div class="md:w-1/2">
+                        <img src="cacao.png" alt="Cacao Puro" class="w-full rounded-3xl shadow-2xl object-cover aspect-[4/3] md:aspect-square">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-3xl font-serif text-navy mb-4">Cacao Sudamericano Puro</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">
+                            Chiamato "Il Cibo degli Dèi", il nostro cacao è lavorato a basse temperature per preservare tutte le sue proprietà. Non è il solito cacao zuccherato, ma un potente antiossidante naturale dal sapore profondo.
+                        </p>
+                        <div class="bg-white p-6 rounded-2xl border border-gold/20 shadow-sm">
+                            <h4 class="font-bold text-navy mb-3">Valore Nutrizionale & Benefici</h4>
+                            <ul class="space-y-2 text-sm text-gray-600 font-light">
+                                <li><strong class="text-gold">Antiossidanti:</strong> Altissima concentrazione di Flavonoidi anti-invecchiamento.</li>
+                                <li><strong class="text-gold">Umore e Focus:</strong> Contiene Teobromina che stimola la concentrazione senza i tremori della caffeina.</li>
+                                <li><strong class="text-gold">Magnesio:</strong> Un eccellente rilassante muscolare naturale.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EL RITUAL (Fondo Madera con Parallax) -->
+    <section class="bg-ritual py-32 px-6 relative text-white text-center">
+        <div class="max-w-3xl mx-auto fade-in">
+            <h2 class="text-5xl md:text-6xl font-serif mb-6">Il Tuo Rituale</h2>
+            <div class="w-24 h-1 bg-gold mx-auto rounded-full mb-8"></div>
+            
+            <div class="bg-navy/60 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
+                <p class="text-lg md:text-xl font-light leading-relaxed mb-6">
+                    Concediti un momento tutto per te. Bastano tre semplici passi per trasformare la tua colazione o la tua pausa in un rito di benessere.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-left md:text-center mt-10">
+                    <div class="flex-1">
+                        <div class="text-gold text-3xl font-serif mb-2">1.</div>
+                        <h4 class="font-bold mb-1">Riscalda</h4>
+                        <p class="text-sm font-light opacity-80">Prepara una tazza del tuo latte preferito.</p>
+                    </div>
+                    <div class="hidden md:block w-px h-12 bg-white/20"></div>
+                    <div class="flex-1">
+                        <div class="text-gold text-3xl font-serif mb-2">2.</div>
+                        <h4 class="font-bold mb-1">Aggiungi</h4>
+                        <p class="text-sm font-light opacity-80">Versa 10g della nostra miscela (due cucchiaini).</p>
+                    </div>
+                    <div class="hidden md:block w-px h-12 bg-white/20"></div>
+                    <div class="flex-1">
+                        <div class="text-gold text-3xl font-serif mb-2">3.</div>
+                        <h4 class="font-bold mb-1">Mescola</h4>
+                        <p class="text-sm font-light opacity-80">Gusta l'aroma intenso delle Ande.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen del Producto al final para recordación -->
+            <img src="producto.png" alt="Miscela di Maca e Cacao" class="h-64 object-contain mx-auto mt-16 drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-transform duration-500">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            
+            <!-- Colonna 1: Logo -->
+            <div class="flex flex-col items-center md:items-start justify-center">
+                <img src="logo.png" alt="Società Latina" class="h-20 object-contain mb-4">
+                <p class="text-gray-400 font-light text-sm">Premium Minimarket</p>
+            </div>
+
+            <!-- Colonna 2: Sede -->
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-xl font-serif text-gold mb-4">La Nostra Sede</h4>
+                <p class="text-gray-300 font-light">V.le Umbria, 9, 20093</p>
+                <p class="text-gray-300 font-light">Cologno Monzese MI</p>
+            </div>
+
+            <!-- Colonna 3: Contatti e Social -->
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-xl font-serif text-gold mb-4">Contact Us</h4>
+                <a href="tel:+393714222925" class="text-gray-300 font-light hover:text-white transition-colors mb-1">+39 371 422 2925</a>
+                <a href="tel:+393470952095" class="text-gray-300 font-light hover:text-white transition-colors mb-1">+39 347 095 2095</a>
+                <a href="mailto:societalatinamilano@gmail.com" class="text-gray-300 font-light hover:text-white transition-colors mb-6 text-sm md:text-base">societalatinamilano@gmail.com</a>
+                
+                <!-- Icone Social -->
+                <div class="flex gap-4">
+                    <!-- FB -->
+                    <a href="#" class="text-gray-300 hover:text-gold transition-colors">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:societalatinamilano@gmail.com" class="text-gray-300 hover:text-gold transition-colors">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                    <!-- Phone -->
+                    <a href="tel:+393714222925" class="text-gray-300 hover:text-gold transition-colors">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                    </a>
+                    <!-- WA -->
+                    <a href="#" class="text-gray-300 hover:text-gold transition-colors">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.01 2.014c-5.508 0-9.982 4.474-9.982 9.983 0 1.764.462 3.486 1.34 5.006l-1.42 5.19 5.305-1.392c1.474.805 3.149 1.23 4.863 1.23 5.506 0 9.98-4.475 9.98-9.984 0-5.509-4.474-9.983-9.98-9.983zm0 18.337c-1.488 0-2.946-.399-4.226-1.157l-.303-.18-3.138.823.837-3.06-.197-.314a8.318 8.318 0 01-1.272-4.449c0-4.606 3.748-8.354 8.354-8.354 4.607 0 8.354 3.748 8.354 8.354 0 4.606-3.747 8.354-8.354 8.354zm4.582-6.262c-.251-.126-1.488-.735-1.718-.819-.23-.084-.398-.126-.566.126-.168.251-.649.818-.795.986-.147.167-.293.188-.544.063-2.115-1.06-3.418-2.316-4.271-3.784-.146-.251.147-.23.393-.721.084-.167.042-.314-.021-.44-.063-.125-.566-1.362-.775-1.865-.205-.494-.413-.427-.566-.435l-.482-.008c-.167 0-.44.063-.67.314-.23.251-.88 .859-.88 2.095s.9 2.43 1.026 2.597c.126.168 1.77 2.702 4.288 3.789 1.705.736 2.385.65 2.804.545.474-.118 1.488-.608 1.698-1.194.21-.587.21-1.09.147-1.195-.063-.105-.23-.168-.482-.293z"/></svg>
+                    </a>
+                    <!-- TikTok -->
+                    <a href="#" class="text-gray-300 hover:text-gold transition-colors">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.68a6.34 6.34 0 0012.67-1.81v-5.61a8.28 8.28 0 004.33 1.22V6a4.83 4.83 0 01-2.41-.31z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-center">
+            <p class="text-xs text-gray-500 opacity-60">© 2026 Società Latina. Tutti i diritti riservati. Prodotto con orgoglio in Perù, pensato per l'Italia.</p>
+        </div>
+    </footer>
+
+    <!-- Script para animaciones -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
