@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Società Latina | Miscela di Maca e Cacao</title>
+    
+    <!-- Tipografías Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#152b45',
+                        gold: '#d4a373',
+                        cream: '#fcf8f2',
+                        dark: '#1a1a1a',
+                        cardbg: '#f9f6f0'
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-200 { transition-delay: 200ms; }
+        
+        .bg-ritual {
+            background-image: linear-gradient(to right, rgba(21, 43, 69, 0.95), rgba(21, 43, 69, 0.8)), url('ritual.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        html[lang="it"] .lang-es { display: none !important; }
+        html[lang="es"] .lang-it { display: none !important; }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-cream font-sans text-dark overflow-x-hidden selection:bg-gold selection:text-white">
+
+    <!-- Navegación y Selector de Idioma -->
+    <nav class="absolute w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="w-40 md:w-48 flex-shrink-0">
+                <img src="logo.png" alt="Società Latina Logo" class="w-full object-contain">
+            </div>
+            
+            <!-- Selector de Idioma con Banderas -->
+            <div class="flex justify-end">
+                <div class="bg-white/90 backdrop-blur-sm rounded-full p-1 shadow-md border border-gray-200 flex text-sm font-bold">
+                    <button onclick="setLang('it')" id="btn-it" class="px-4 py-1.5 rounded-full bg-navy text-white transition-all flex items-center gap-2">
+                        <span class="text-base">🇮🇹</span> IT
+                    </button>
+                    <button onclick="setLang('es')" id="btn-es" class="px-4 py-1.5 rounded-full text-navy hover:text-gold transition-all flex items-center gap-2">
+                        <span class="text-base">🇪🇸</span> ES
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-32 bg-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+            
+            <!-- Texto Hero -->
+            <div class="lg:w-1/2 text-center lg:text-left fade-in">
+                <span class="text-gold text-xs tracking-[0.2em] uppercase mb-4 block font-bold">
+                    <span class="lang-it">Integratore Alimentare</span>
+                    <span class="lang-es">Complemento Alimenticio</span>
+                </span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif text-navy leading-tight mb-6">
+                    <span class="lang-it">Il Risveglio<br><span class="italic text-gold">delle Ande</span></span>
+                    <span class="lang-es">El Despertar<br><span class="italic text-gold">de los Andes</span></span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
+                    <span class="lang-it">Una miscela funzionale. L'incontro perfetto tra la saggezza millenaria andina e il ritmo della tua vita moderna.</span>
+                    <span class="lang-es">Una mezcla funcional. El encuentro perfecto entre la sabiduría milenaria andina y el ritmo de tu vida moderna.</span>
+                </p>
+                <a href="#video-storia" class="inline-block bg-navy text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-gold hover:text-white transition-colors duration-300">
+                    <span class="lang-it">Scopri di Più</span>
+                    <span class="lang-es">Descubre Más</span>
+                </a>
+            </div>
+
+            <!-- Imagen Hero -->
+            <div class="lg:w-1/2 relative fade-in delay-200 flex justify-center">
+                <div class="absolute inset-0 bg-gold/5 rounded-full blur-3xl transform scale-110"></div>
+                <img src="hombre.png" alt="Uomo con prodotto" class="w-full max-w-md lg:max-w-lg object-contain relative z-10 drop-shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- FRANJA DE CERTIFICACIONES (Nueva) -->
+    <div class="bg-navy border-t border-white/10 py-6 fade-in">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-8 md:gap-16 text-white text-sm md:text-base font-light tracking-wider uppercase">
+            <div class="flex items-center gap-3">
+                <span class="text-gold text-2xl">🌱</span> 
+                <span><span class="lang-it">Biologico Certificato</span><span class="lang-es">Orgánico Certificado</span></span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-gold text-2xl">🛡️</span> 
+                <span>Qualità HACCP</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-gold text-2xl">🌿</span> 
+                <span>100% Plant-Based</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SECCIÓN DE VIDEO INCRUSTADO -->
+    <section id="video-storia" class="bg-navy py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto fade-in">
+            <div class="text-center mb-10">
+                <span class="text-gold text-sm tracking-widest uppercase mb-2 block font-bold">
+                    <span class="lang-it">Un Viaggio Millenario</span>
+                    <span class="lang-es">Un Viaje Milenario</span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">
+                    <span class="lang-it">La storia dietro ogni tazza</span>
+                    <span class="lang-es">La historia detrás de cada taza</span>
+                </h2>
+            </div>
+            
+            <div class="video-container border-4 border-white/10">
+                <!-- INSERTA AQUÍ TU ENLACE DE YOUTUBE. El actual es un placeholder de paisajes peruanos. -->
+                <iframe src="https://www.youtube.com/embed/jZ_y-Ld_j5A?autoplay=0&controls=1&showinfo=0&rel=0&modestbranding=1" title="Società Latina Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAZABILIDAD Y ORIGEN (Nueva Sección Farm to Fork) -->
+    <section class="bg-white py-24 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <!-- Imagen Agricultor -->
+            <div class="lg:w-1/2 fade-in">
+                <img src="image_430fc9.jpg" alt="Agricultor Peruano" class="w-full h-[450px] object-cover rounded-3xl shadow-xl">
+            </div>
+            <!-- Texto -->
+            <div class="lg:w-1/2 fade-in delay-200">
+                <span class="text-gold text-sm tracking-widest uppercase mb-4 block font-bold">
+                    <span class="lang-it">Filiera Corta "Farm to Fork"</span>
+                    <span class="lang-es">Cadena Corta "Farm to Fork"</span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-6">
+                    <span class="lang-it">Dalle terre andine alla tua tavola a Milano</span>
+                    <span class="lang-es">De las tierras andinas a tu mesa en Milán</span>
+                </h2>
+                <p class="text-gray-600 font-light leading-relaxed mb-6">
+                    <span class="lang-it">Garantiamo l'autenticità. La nostra è una storia di famiglia e di trasparenza: William supervisiona la coltivazione e la produzione in Perù assicurando la massima qualità all'origine, mentre Richard gestisce la distribuzione diretta in Italia.</span>
+                    <span class="lang-es">Garantizamos la autenticidad. La nuestra es una historia de familia y transparencia: William supervisa el cultivo y producción en Perú asegurando la calidad en origen, mientras Richard gestiona la distribución directa en Italia.</span>
+                </p>
+                <div class="bg-cardbg p-6 rounded-2xl border-l-4 border-gold">
+                    <p class="text-navy font-bold flex items-center gap-3">
+                        <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="lang-it">Zero Intermediari. Trazabilità Totale. Prezzo Giusto.</span>
+                        <span class="lang-es">Cero Intermediarios. Trazabilidad Total. Precio Justo.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PURO NUTRIMENTO (TARJETAS TIPO NESCAFÉ) -->
+    <section class="bg-cardbg py-24 px-6 relative rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif text-navy mb-4">Puro Nutrimento</h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta 1: Smoothie -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 fade-in">
+                    <div class="h-56 relative overflow-hidden">
+                        <img src="smoothie.png" alt="Smoothie Maca" class="w-full h-full object-cover">
+                        <div class="absolute bottom-4 left-4 bg-white/95 text-navy text-xs font-bold px-3 py-1.5 rounded shadow-sm uppercase tracking-wider">
+                            <span class="lang-it">Benessere</span><span class="lang-es">Bienestar</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-3">
+                            <span class="lang-it">Energia Naturale</span><span class="lang-es">Energía Natural</span>
+                        </h3>
+                        <p class="text-gray-600 font-light leading-relaxed text-sm">
+                            <span class="lang-it">Rivitalizza il tuo corpo con una fonte di energia stabile, perfetta per affrontare la giornata senza i cali improvvisi.</span>
+                            <span class="lang-es">Revitaliza tu cuerpo con una fuente de energía estable, perfecta para afrontar el día sin bajones repentinos.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Concentración -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 fade-in delay-200">
+                    <div class="h-56 relative overflow-hidden bg-[#e8ded1]">
+                        <img src="concentracion.png" alt="Donna focus" class="w-full h-full object-cover object-center">
+                        <div class="absolute bottom-4 left-4 bg-white/95 text-navy text-xs font-bold px-3 py-1.5 rounded shadow-sm uppercase tracking-wider">
+                            <span class="lang-it">Nutrizione</span><span class="lang-es">Nutrición</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-3">
+                            <span class="lang-it">Focus Profondo</span><span class="lang-es">Enfoque Profundo</span>
+                        </h3>
+                        <p class="text-gray-600 font-light leading-relaxed text-sm">
+                            <span class="lang-it">La sinergia tra cacao e maca favorisce la chiarezza mentale e la concentrazione, ideale per lo studio e il lavoro.</span>
+                            <span class="lang-es">La sinergia entre cacao y maca favorece la claridad mental y la concentración, ideal para el estudio y el trabajo.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Sostenibilidad -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 fade-in delay-200">
+                    <div class="h-56 relative overflow-hidden bg-gray-200">
+                        <img src="sostenibilidad.png" alt="Sostenibilità" class="w-full h-full object-cover object-center">
+                        <div class="absolute bottom-4 left-4 bg-[#6c8c74] text-white text-xs font-bold px-3 py-1.5 rounded shadow-sm uppercase tracking-wider">
+                            <span class="lang-it">Sostenibilità</span><span class="lang-es">Sostenibilidad</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-serif text-navy mb-3">
+                            <span class="lang-it">100% Sostenibile</span><span class="lang-es">100% Sostenible</span>
+                        </h3>
+                        <p class="text-gray-600 font-light leading-relaxed text-sm">
+                            <span class="lang-it">Supportiamo un'agricoltura che rispetta la biodiversità del suolo peruviano e garantisce un impatto positivo sulle comunità.</span>
+                            <span class="lang-es">Apoyamos una agricultura que respeta la biodiversidad del suelo peruano y garantiza un impacto positivo en las comunidades.</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BLOQUE: PARA QUIÉN ES IDEAL (Nuevo) -->
+            <div class="max-w-5xl mx-auto mt-20 bg-navy text-white rounded-3xl p-10 md:p-12 shadow-2xl fade-in text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+                <h3 class="text-3xl font-serif mb-8 relative z-10">
+                    <span class="lang-it">Per chi è ideale la nostra miscela?</span>
+                    <span class="lang-es">¿Para quién es ideal nuestra mezcla?</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                    <!-- Profesionales -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/5">
+                        <div class="text-3xl mb-3">💼</div>
+                        <h4 class="font-bold text-gold mb-2"><span class="lang-it">Professionisti</span><span class="lang-es">Profesionales</span></h4>
+                        <p class="text-sm font-light opacity-90">
+                            <span class="lang-it">Per affrontare giornate di lavoro intense con energia costante.</span>
+                            <span class="lang-es">Para afrontar días de trabajo intensos con energía constante.</span>
+                        </p>
+                    </div>
+                    <!-- Estudiantes -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/5">
+                        <div class="text-3xl mb-3">📚</div>
+                        <h4 class="font-bold text-gold mb-2"><span class="lang-it">Studenti</span><span class="lang-es">Estudiantes</span></h4>
+                        <p class="text-sm font-light opacity-90">
+                            <span class="lang-it">Per mantenere focus e concentrazione durante lo studio profondo.</span>
+                            <span class="lang-es">Para mantener el enfoque y la concentración durante el estudio profundo.</span>
+                        </p>
+                    </div>
+                    <!-- Activos -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/5">
+                        <div class="text-3xl mb-3">🏃</div>
+                        <h4 class="font-bold text-gold mb-2"><span class="lang-it">Sportivi & Attivi</span><span class="lang-es">Deportistas & Activos</span></h4>
+                        <p class="text-sm font-light opacity-90">
+                            <span class="lang-it">Per chi cerca vitalità senza i cali improvvisi della caffeina.</span>
+                            <span class="lang-es">Para quienes buscan vitalidad sin los bajones repentinos de la cafeína.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. INGREDIENTES -->
+    <section class="bg-white py-24 px-6 relative border-t border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-serif text-navy mb-4">
+                    <span class="lang-it">Ingredienti ancestrali, benefici reali</span>
+                    <span class="lang-es">Ingredientes ancestrales, beneficios reales</span>
+                </h2>
+                <div class="w-16 h-1 bg-gold mx-auto rounded-full mb-8"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                
+                <!-- Maca Amarilla -->
+                <div class="bg-cardbg rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100 fade-in">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-8">
+                        <img src="maca.png" alt="Maca" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-3xl font-serif text-navy mb-1">
+                        <span class="lang-it">Maca Gialla</span><span class="lang-es">Maca Amarilla</span>
+                    </h3>
+                    <p class="text-gold text-sm italic mb-6">
+                        <span class="lang-it">Energia che nasce nelle Ande</span><span class="lang-es">Energía que nace en los Andes</span>
+                    </p>
+                    <div class="space-y-4 text-sm font-light text-gray-700">
+                        <p>
+                            <strong class="text-navy font-bold"><span class="lang-it">Cos'è?</span><span class="lang-es">¿Qué es?</span></strong><br>
+                            <span class="lang-it">Radice andina coltivata da oltre 2000 anni nelle alture del Perù. Un superfood venerato per le sue proprietà.</span>
+                            <span class="lang-es">Raíz andina cultivada por más de 2000 años en las alturas del Perú. Un superfood venerado por sus propiedades.</span>
+                        </p>
+                        <p>
+                            <strong class="text-navy font-bold"><span class="lang-it">Benefici:</span><span class="lang-es">Beneficios:</span></strong><br>
+                            <span class="lang-it">Aiuta ad aumentare l'energia fisica e mentale, migliora la resistenza e promuove il benessere generale.</span>
+                            <span class="lang-es">Ayuda a aumentar la energía física y mental, mejora la resistencia y promueve el bienestar general.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cacao -->
+                <div class="bg-cardbg rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100 fade-in delay-200">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-8">
+                        <img src="cacao.png" alt="Cacao" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-3xl font-serif text-navy mb-1">Cacao</h3>
+                    <p class="text-gold text-sm italic mb-6">
+                        <span class="lang-it">L'alimento degli dèi</span><span class="lang-es">El alimento de los dioses</span>
+                    </p>
+                    <div class="space-y-4 text-sm font-light text-gray-700">
+                        <p>
+                            <strong class="text-navy font-bold"><span class="lang-it">Cos'è?</span><span class="lang-es">¿Qué es?</span></strong><br>
+                            <span class="lang-it">Seme ancestrale delle foreste sudamericane, apprezzato fin dalle civiltà millenarie precolombiane.</span>
+                            <span class="lang-es">Semilla ancestral de los bosques sudamericanos, apreciada desde civilizaciones milenarias precolombinas.</span>
+                        </p>
+                        <p>
+                            <strong class="text-navy font-bold"><span class="lang-it">Benefici:</span><span class="lang-es">Beneficios:</span></strong><br>
+                            <span class="lang-it">Ricco di antiossidanti e magnesio, favorisce il normale tono dell'umore e apporta un sapore delizioso e nutritivo.</span>
+                            <span class="lang-es">Rico en antioxidantes y magnesio, favorece el estado de ánimo normal y aporta un sabor delicioso y nutritivo.</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EL RITUAL -->
+    <section class="bg-ritual py-32 px-6 relative text-white text-center">
+        <div class="max-w-4xl mx-auto fade-in">
+            <h2 class="text-5xl md:text-6xl font-serif mb-6 drop-shadow-lg">
+                <span class="lang-it">Il Tuo Rituale</span><span class="lang-es">Tu Ritual</span>
+            </h2>
+            <div class="w-24 h-1 bg-gold mx-auto rounded-full mb-8"></div>
+            
+            <div class="bg-navy/80 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl mt-10">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-center">
+                    <div class="flex-1">
+                        <div class="text-gold text-4xl font-serif mb-2">1</div>
+                        <h4 class="font-bold mb-2 text-lg">
+                            <span class="lang-it">Riscalda</span><span class="lang-es">Calienta</span>
+                        </h4>
+                        <p class="text-sm font-light opacity-90">
+                            <span class="lang-it">Prepara una tazza del tuo latte o bevanda vegetale preferita.</span>
+                            <span class="lang-es">Prepara una taza de tu leche o bebida vegetal favorita.</span>
+                        </p>
+                    </div>
+                    <div class="hidden md:block w-px h-16 bg-white/20"></div>
+                    <div class="flex-1">
+                        <div class="text-gold text-4xl font-serif mb-2">2</div>
+                        <h4 class="font-bold mb-2 text-lg">
+                            <span class="lang-it">Aggiungi</span><span class="lang-es">Añade</span>
+                        </h4>
+                        <p class="text-sm font-light opacity-90">
+                            <span class="lang-it">Versa 10g della nostra miscela (circa un cucchiaio colmo).</span>
+                            <span class="lang-es">Vierte 10g de nuestra mezcla (aprox. una cucharada).</span>
+                        </p>
+                    </div>
+                    <div class="hidden md:block w-px h-16 bg-white/20"></div>
+                    <div class="flex-1">
+                        <div class="text-gold text-4xl font-serif mb-2">3</div>
+                        <h4 class="font-bold mb-2 text-lg">
+                            <span class="lang-it">Mescola</span><span class="lang-es">Mezcla</span>
+                        </h4>
+                        <p class="text-sm font-light opacity-90">
+                            <span class="lang-it">Gusta l'aroma profondo e inizia la tua giornata con vitalità.</span>
+                            <span class="lang-es">Disfruta el aroma profundo y empieza tu día con vitalidad.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <img src="producto.png" alt="Empaque Società Latina" class="h-80 md:h-96 object-contain mx-auto mt-16 drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
+        </div>
+    </section>
+
+    <!-- FOOTER Y NORMATIVA LEGAL EUROPEA -->
+    <footer class="bg-[#2c3d70] text-white py-16 px-6 border-t-[10px] border-gold">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Bloque de Contacto -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center border-b border-white/10 pb-12">
+                
+                <!-- Logo -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="logo.png" alt="Società Latina" class="h-28 object-contain brightness-0 invert opacity-100">
+                </div>
+
+                <!-- Dirección -->
+                <div class="text-center md:text-left">
+                    <p class="text-xl font-light mb-2">V.le Umbria, 9, 20093</p>
+                    <p class="text-xl font-light">Cologno Monzese MI</p>
+                </div>
+
+                <!-- Contacto y Redes -->
+                <div class="text-center md:text-left md:ml-auto">
+                    <h4 class="text-2xl font-bold mb-6 font-serif">Contact Us</h4>
+                    <p class="text-lg font-light mb-2">+39 371 422 2925</p>
+                    <p class="text-lg font-light mb-4">+39 347 095 2095</p>
+                    <p class="text-base font-light mb-8 opacity-90">societalatinamilano@gmail.com</p>
+                    
+                    <!-- Iconos Redes (Simulados con texto) -->
+                    <div class="flex justify-center md:justify-start gap-6 text-2xl">
+                        <a href="#" class="hover:text-gold transition font-bold">f</a>
+                        <a href="#" class="hover:text-gold transition">✉</a>
+                        <a href="#" class="hover:text-gold transition">📞</a>
+                        <a href="#" class="hover:text-gold transition">💬</a>
+                        <a href="#" class="hover:text-gold transition">♪</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer Legal Normativo Europeo -->
+            <div class="pt-10 text-center text-[11px] md:text-xs text-gray-300 font-light max-w-5xl mx-auto space-y-4 leading-relaxed">
+                <p>
+                    <span class="lang-it"><strong>Società Latina</strong> commercializza questo prodotto in conformità alla <strong>Direttiva 2002/46/CE</strong> e al <strong>D.Lgs. 169/2004</strong> sugli integratori alimentari in Italia.</span>
+                    <span class="lang-es"><strong>Società Latina</strong> comercializa este producto en conformidad con la <strong>Directiva 2002/46/CE</strong> y el <strong>D.Lgs. 169/2004</strong> sobre complementos alimenticios en Italia.</span>
+                </p>
+                <p>
+                    <span class="lang-it">Questo prodotto è un <strong>integratore alimentare</strong> e non è un farmaco. Le informazioni fornite non sono destinate a diagnosticare, trattare, curare o prevenire alcuna malattia. Le dichiarazioni sulle proprietà salutistiche degli ingredienti sono formulate nel rigoroso rispetto del <strong>Regolamento (CE) 1924/2006</strong>. Si raccomanda di consumare il prodotto nell'ambito di una dieta varia ed equilibrata e di uno stile di vita sano.</span>
+                    <span class="lang-es">Este producto es un <strong>complemento alimenticio</strong> y no es un medicamento. La información proporcionada no está destinada a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Las declaraciones de propiedades saludables de los ingredientes se formulan en estricto respeto del <strong>Reglamento (CE) 1924/2006</strong>. Se recomienda consumir el producto dentro de una dieta variada y equilibrada y un estilo de vida saludable.</span>
+                </p>
+                <p class="mt-8 opacity-60 font-bold">© 2026 Società Latina Minimarket. Tutti i diritti riservati.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            const btnIt = document.getElementById('btn-it');
+            const btnEs = document.getElementById('btn-es');
+
+            if (lang === 'it') {
+                btnIt.classList.add('bg-navy', 'text-white');
+                btnIt.classList.remove('text-navy', 'hover:text-gold');
+                btnEs.classList.remove('bg-navy', 'text-white');
+                btnEs.classList.add('text-navy', 'hover:text-gold');
+            } else {
+                btnEs.classList.add('bg-navy', 'text-white');
+                btnEs.classList.remove('text-navy', 'hover:text-gold');
+                btnIt.classList.remove('bg-navy', 'text-white');
+                btnIt.classList.add('text-navy', 'hover:text-gold');
+            }
+        }
+    </script>
+</body>
+</html>
